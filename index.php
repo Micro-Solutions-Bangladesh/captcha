@@ -6,6 +6,26 @@ if (!defined('KAHUKPATH')) {
 include_once KAHUKPATH_PLUGINS . PLUGIN_SLUG_CAPTCHA . "/frontend.php";
 
 /**
+ * Add a menu item in Admin under Plugins
+ */
+$menu_item_parent = "manage-plugins";
+$hooks->add_filter("kahuk_admin_menu_sub_{$menu_item_parent}", "captcha_admin_menu_sub_callback");
+
+function captcha_admin_menu_sub_callback($items) {
+    $items[] = [
+        "menu_slug" => PLUGIN_SLUG_CAPTCHA,
+        "page_title" => "Captcha Settings",
+        "menu_title" => "Captcha",
+        "capability" => "admin",
+        "icon_url" => "",
+        "url" => PLUGIN_SETTINGS_CAPTCHA,
+        "position" => 10.6,
+    ];
+
+    return $items;
+}
+
+/**
  * Hook Function
  * Plugin Settings Page
  */
