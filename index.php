@@ -3,7 +3,7 @@ if (!defined('KAHUKPATH')) {
 	die();
 }
 
-include_once KAHUK_PLUGINS_DIR . PLUGIN_SLUG_CAPTCHA . "/frontend.php";
+include_once KAHUKPATH_PLUGINS . PLUGIN_SLUG_CAPTCHA . "/frontend.php";
 
 /**
  * Hook Function
